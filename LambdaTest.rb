@@ -8,7 +8,7 @@ class AdvanceTest < Test::Unit::TestCase
     def setup
 		config = ReadConfig.new()	
 		lt_user = ENV['LT_USERNAME']
-		lt_appkey = ENV['LT_APPKEY']
+		lt_appkey = ENV['LT_ACCESS_KEY']
 		lt_os = ENV['LT_OPERATING_SYSTEM']
 		lt_browser = ENV['LT_BROWSER']
 		lt_browser_version = ENV['LT_BROWSER_VERSION']
@@ -16,7 +16,7 @@ class AdvanceTest < Test::Unit::TestCase
 			lt_user = config.getDetails('LT_USERNAME')
 		end
 		if(lt_appkey == "" || lt_appkey == nil)
-			lt_appkey = config.getDetails('LT_APPKEY')
+			lt_appkey = config.getDetails('LT_ACCESS_KEY')
 		end
 		if(lt_browser == "" || lt_browser == nil)
 			lt_browser = config.getDetails('LT_BROWSER')
@@ -32,11 +32,7 @@ class AdvanceTest < Test::Unit::TestCase
 			:version => lt_browser_version,			
 			:platform =>  lt_os,
 			:name =>  "RubyRSpecTestSample",
-			:build =>  "LambdaTestSampleApp",       
-			:network =>  true,
-			:visual =>  true,
-			:video =>  true,
-			:console =>  true
+			:build =>  "LambdaTestSampleApp"
 		} 	
 		puts (caps)
 		@driver = Selenium::WebDriver.for(:remote,
@@ -53,11 +49,11 @@ class AdvanceTest < Test::Unit::TestCase
 
         #Click on First Checkbox
         fCheckbox = @driver.find_element(:name, 'li1')
-        fCheckbox.submit
+        fCheckbox.click
 
         #Click on Second Checkbox
         sCheckbox = @driver.find_element(:name, 'li2')
-        sCheckbox.submit
+        sCheckbox.click
     
         #Enter Item Name 
         itemNameInput = @driver.find_element(:id, 'sampletodotext')
