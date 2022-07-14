@@ -35,7 +35,7 @@
 
 Before you can start performing Ruby automation testing with Selenium, you would need to:
 
-* Install Ruby and gem on your local system. Follow these instructions to install on different operating systems.
+* Install Ruby 2.7.x and gem 3.1.x on your local system. Follow these instructions to install on different operating systems.
   * For **Windows**, you can download from the [official website](https://rubyinstaller.org/downloads/).
   * For **Linux** or **Ubuntu**, you can run a simple apt command like below:
   ```bash
