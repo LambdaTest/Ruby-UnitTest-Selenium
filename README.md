@@ -39,7 +39,7 @@ Before you can start performing Ruby automation testing with Selenium, you would
   * For **Windows**, you can download from the [official website](https://rubyinstaller.org/downloads/).
   * For **Linux** or **Ubuntu**, you can run a simple apt command like below:
   ```bash
-  sudo apt-get install ruby-full
+  sudo apt-get install ruby-full (Install ruby 2.7.x version using RVM)
   ```
   * For **macOS**, you can run a [Homebrew](https://brew.sh/) command like this:
   ```bash
