@@ -47,7 +47,7 @@ class AdvanceTest < Test::Unit::TestCase
     )
 
     @driver.manage.window.maximize
-    @driver.navigate.to("https://lambdatest.github.io/sample-todo-app/")
+    @driver.navigate.to("https://www.testmuai.com/selenium-playground/todo-app/")
   end
 
   def test_Login
@@ -58,7 +58,7 @@ class AdvanceTest < Test::Unit::TestCase
     @driver.find_element(:id, 'sampletodotext').send_keys(item_name)
     @driver.find_element(:id, 'addbutton').click
 
-    get_item_name = @driver.find_element(:xpath, '/html/body/div/div/div/ul/li[6]/span').text
+    get_item_name = @driver.find_element(:xpath, "//input[@name='li6']/following-sibling::span").text
     assert_equal(item_name, get_item_name)
   end
 
